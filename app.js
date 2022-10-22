@@ -1,6 +1,21 @@
 const write = require('./write')
 const read = require('./read')
-const data = process.argv[2]
+const add = require('./add')
 
-write(data)
+const data = process.argv
+
 console.log(read())
+
+var note = {}
+
+if(data[2] == 'add'){
+    note = { 
+        id: data[3],  
+        title: data[4], 
+        body: data[5]}
+
+var oldNote = read()
+add(note, oldNote)
+
+
+}
