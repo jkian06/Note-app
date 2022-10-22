@@ -1,11 +1,9 @@
 const write = require('./write')
 const read = require('./read')
 const add = require('./add')
+const present = require('./present')
 
 const data = process.argv
-
-console.log(read())
-
 var note = {}
 
 if(data[2] == 'add'){
@@ -17,5 +15,9 @@ if(data[2] == 'add'){
 var oldNote = read()
 add(note, oldNote)
 
+}
 
+if (data[2] == 'read'){
+
+    present(read()) 
 }
